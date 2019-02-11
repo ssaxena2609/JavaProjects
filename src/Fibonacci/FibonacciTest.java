@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FibonacciTest {
     static int limit;
 
-    static int fibo(int number) {
+   /* static int fibo(int number) {
         if(number == 1 || number == 2){
             return 1;
         }
@@ -16,19 +16,27 @@ public class FibonacciTest {
             fibo2 = fibonacci;
         }
              return fibonacci;
-        }
+        }*/
 
 
     public static void main(String []str) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Fibonacci Limit.");
         limit = sc.nextInt();
+        int a = 1, b = 1, c;
+        c = a + b;
+        for (int i = 1; i <= limit; i++) {
+            if (i == 1 || i == 2) {
+                System.out.print("1 ");
+            } else if(i==3) {
+                System.out.print("2 ");
+            } else {
+                a = b;
+                b = c;
+                c = a + b;
+                System.out.print(c + " ");
+            }
 
-        for(int i=1; i<=limit; i++){
-            System.out.print(fibo(i) +" ");
         }
-
-
-
     }
 }
